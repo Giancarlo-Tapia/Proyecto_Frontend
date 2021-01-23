@@ -1,16 +1,20 @@
 import React from 'react'
 import LoginFooter from './components/LoginFooter'
 import LoginForm from './components/LoginForm'
-import {Switch, Route}  from 'react-router-dom'
 import LoginHeader from './components/LoginHeader'
-import './form.css'
+import '../../../../styles/form.css'
 
 
-const AuthLoginScreen = () => {
+const AuthLoginScreen = (props) => {
+    console.log(props);
+    const goLoginScreen = () => {
+        props.history.push("/login")
+    }
     
 
     return (    
-        <body>
+        
+        <>
             <main className="main">
                 <LoginHeader />
                 <LoginForm/>
@@ -18,7 +22,7 @@ const AuthLoginScreen = () => {
 
 
             <LoginFooter/>
-        </body>   
+        </>   
         
     )
 }

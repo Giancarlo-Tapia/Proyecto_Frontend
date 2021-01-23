@@ -15,8 +15,21 @@
   font-family: "Poppins", sans-serif;
 }
 
+
+
+.main {
+  height: calc(100vh - var(--height-footer));
+  min-height: 42em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header {
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .header__menu {
@@ -35,20 +48,6 @@
   align-items: center;
 }
 
-.main {
-  height: calc(100vh - var(--height-footer));
-  min-height: 42em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .form__wrapper {
   background-color: var(--color-primary);
   border-radius: 1.5em;
@@ -62,6 +61,7 @@
   color: white;
   font-size: 2.2em;
   text-align: center;
+  font-weight: 700;
 }
 
 .form {
@@ -71,7 +71,7 @@
   gap: 0.7em;
 }
 
-.btn {
+.btn-style {
   width: 18em;
   height: 2.5em;
   margin: 0 auto;
@@ -84,6 +84,7 @@
   align-items: center;
   position: relative;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .google {
@@ -102,6 +103,7 @@
   border-radius: 0.15em;
   position: absolute;
   left: 0.6em;
+  top: 0.4em;
   text-align: center;
 }
 
@@ -115,8 +117,8 @@
 }
 
 .form__input {
-  width: 23em;
-  height: 3em;
+  width: 20em;
+  height: 2.5em;
   border-radius: 1.5em;
   outline: none;
   border: none;
@@ -148,7 +150,7 @@
 .links__top {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 1em;
+  margin-bottom: 0.2em;
 }
 
 .form__links a {
@@ -159,9 +161,10 @@
 .footer__wrapper {
   height: var(--height-footer);
   background-color: var(--color-footer);
+
 }
 
-.footer {
+.footer__row {
   max-width: 1440px;
   transform: translate(0, calc( var(--height-footer) / 2 - 50%));
   padding: 0 1em;
@@ -225,7 +228,7 @@
     align-items: center;
   }
 
-  .footer {
+  .footer__row {
     transform: translate(0,0);
     width: 100%;
     padding: 0;
@@ -256,13 +259,7 @@
 }
 
 @media screen and (max-width: 426px) {
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
+    .main {
       background-color: var(--color-primary);
     }
 
@@ -290,7 +287,7 @@
       background: white;
     }
 
-    .footer {
+    .footer__row {
       color: black;
     }
     
